@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block pagecontent %}
+<!-- Button to get links from other server. Class - get-link which makes ajax call -->
+<div class="row">
+<div class="s6 m12 l6">
+<p class="flow-text" style="font-size: 42px;">Problems</p>
+<xmp class="prettyprint" id="out" hidden></xmp>
+</div>
+<div class="s6 m12 l6 right">
+<a class="{{ c }} tooltipped" id="save-lang1" data-position="top" data-delay="50" data-tooltip="C Language"><i class="material-icons">code</i></a>
+<a class="{{ cpp }} tooltipped" id="save-lang2" data-position="top" data-delay="50" data-tooltip="C++ Language"><i class="material-icons">code</i></a>
+<a class="{{ java }} tooltipped" id="save-lang3" data-position="top" data-delay="50" data-tooltip="Java Language"><i class="material-icons">code</i></a>
+<a class="{{ python }} tooltipped" id="save-lang4" data-position="top" data-delay="50" data-tooltip="Python Language"><i class="material-icons">code</i></a>
+<br>
+<p style="font-size: 14px" class="flow-text">Choose your language</p>
+<a href = "#" id="targe"><p class="right flow-text" style="font-size: 14px;">help?</p></a>
+
+  <div class="tap-target flow-text blue" data-activates="save-lang1">
+    <div class="tap-target-content center">
+      <p style="font-size: 42px;">Language</p>
+      <p>These buttons helps you to choose the desire language in which you want your source code.</p>
+      <p>With this button you will get the answer in that particular language only.</p>
+      <p><b>Hover to get language detail</b></p>
+      <a href="#" class="btn red">Close</a>
+    </div>
+  </div>
+
+
+
+
+</div>
+</div>
+<a class="waves-effect waves-light btn get-link">Get</a>
+<hr>
+<p id="problemq" style="font-size: 12px;"><h3 class="flow-text">Get your first question ... (if you don't see any question then again press button)</h3></p>
+<p id="problemlink"></p>
+<div id="problema" style="display: none;">
+<p class="flow-text" style="font-size: 42px;">Answers <a class="btn btn-floating btn-large pulse red loadd" id="save-lang4" style="display: none;" data-position="top" data-delay="50" data-tooltip="Loading ..."><i class="material-icons">swap_vertical_circle</i></a></p>
+<hr class="container">
+<br>
+<a class="waves-effect waves-light btn get-answer">Get</a>
+  <ul class="collapsible popout" data-collapsible="accordion" id = "problemanswer">
+  </ul>
+  </div>
+{% endblock %}

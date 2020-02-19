@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block pagecontent %}
+<p class="flow-text">Answers</p>
+<hr>
+{% for language, answer, question in answers %}
+<p>Language: {{ language }}</p>
+<p>Answer: {{ answer }}</p>
+<p>Question: {{ question }}
+<hr class = "container">
+{% endfor  %}
+<p class = "flow-text">Current active language</p>
+<p>{{ language }}</p>
+{% endblock %}

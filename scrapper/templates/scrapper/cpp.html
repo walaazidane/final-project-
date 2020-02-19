@@ -1,0 +1,176 @@
+{% extends 'base.html' %} {% block largepagecontent %}
+<div style="padding: 5%;">
+<div class="row">
+<div class="col s12 m3 center">
+<p>Get started by pressing this button</p>
+<a class="cfgetnicelink btn">Get</a>
+<br>
+<a class="cfgetlink btn green">I am Feeling Lucky</a>
+<br>
+<a class="center" style="color: black" href="javascript:void(0);" id="cfreload"><i class="material-icons medium">loop</i></a>
+</div>
+<div class="col s12 m8 l8 center" id="difficulty">
+<h3 data="A" class = "A" id="cfcheck">Choose your difficulty</h3>
+<div class="difficulty-A right card" style="border:15px solid #4caf50;padding: 4%;">
+	 <h4 class = "center" >A</h4>
+	 <a class="btn-floating halfway-fab waves-effect waves-light green right btn-large cfdone1" id = "cfdone1" style="display: none;"><i class="material-icons">done</i></a>
+	 <a class="btn-floating halfway-fab waves-effect waves-light green right btn-large cfdone1" id = "cfchoose1" data="A"><i class="material-icons">add</i></a>
+
+</div>
+<div class="difficulty-B right card" style="border:15px solid #ffeb3b;padding: 4%;">
+	 <h4 class = "center" >B</h4>
+	 <a class="btn-floating halfway-fab waves-effect waves-light yellow right btn-large cfdone2" id="cfdone2" style="display: none;"><i class="material-icons">done</i></a>
+	 <a class="btn-floating halfway-fab waves-effect waves-light yellow right btn-large cfdone1" id = "cfchoose2" data="B"><i class="material-icons">add</i></a>
+
+</div>
+<div class="difficulty-C right card" style="border:15px solid #ff9800;padding: 4%;">
+	 <h4 class = "center" >C</h4>
+	 <a class="btn-floating halfway-fab waves-effect waves-light orange right btn-large cfdone3" id="cfdone3" style="display: none;"><i class="material-icons">done</i></a>
+	 <a class="btn-floating halfway-fab waves-effect waves-light orange right btn-large cfdone1" id = "cfchoose3" data="C"><i class="material-icons">add</i></a>
+
+</div>
+<div class="difficulty-D right card" style="border:15px solid #f44336;padding: 4%;">
+	 <h4 class = "center" >D+</h4>
+	 <a class="btn-floating halfway-fab waves-effect waves-light red right btn-large cfdone4" id="cfdone4" style="display: none;"><i class="material-icons">done</i></a>
+	 <a class="btn-floating halfway-fab waves-effect waves-light red right btn-large cfdone1" id = "cfchoose4" data="D"><i class="material-icons">add</i></a>
+
+</div>
+
+
+
+
+</div>
+<a href="#modal1" class="right">help?</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content flow-text">
+    <div class="row">
+          <div class="col s12 m12 l12">
+            <h4>Question Ratings</h4>
+                <div class="left card" style="border:15px solid #f44336;padding: 4%;">
+                <h4 class = "center" >D+</h4>
+                <a class="btn-floating halfway-fab waves-effect waves-light red right btn-large pulse"><i class="material-icons">add</i></a>
+                </div>
+          </div>
+              <div class="col s12 m12 l12">
+                    This is the rating card. Click each of these buttons to get those rated question
+                  </div>
+
+<hr>
+
+        <div class="col s12 m6 l12">
+                  <div class="left card" style="border:15px solid #4caf50;padding: 4%;">
+              <h4 class = "center" >A</h4>
+              <a class="btn-floating halfway-fab waves-effect waves-light green right btn-large pulse"><i class="material-icons">done</i></a>
+              </div>
+        </div>
+          <div class="col s12 m6 l12">
+          Double click this button to go ahead of this question from 1A to 2A ... and so on
+          <br>
+          For example if you are following B rating path then it will move like 1B - 2B ...
+          </div>
+          <hr>
+    <div class="col s12 m12 l12">
+    <a class="btn">Get</a>
+    <br>
+    Get will follow problems from codeforces in linear order like 1, 2, 3 ...
+    <br>
+  <a class="btn green">I am Feeling Lucky</a>
+  <br>
+    But I am feeling lucky will fetch random question from it.<br>
+    Note: Make sure you choose rating before clicking these buttons
+<br>
+<br>
+<a class="center" style="color: black" href="javascript:void(0);"><i class="material-icons medium">loop</i></a>
+<br>This will refresh everything and starts from scratch
+    </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+</div>
+
+
+<div id="problem-page" class="flow-text">
+
+
+</div>
+
+<hr>
+</div>
+<div id="problem-answer" style="font-size: 14px;display: none;padding:3%">
+<br>
+  <form action="javascript:void(0);">
+    <p>
+      <input name="group1" type="radio" name="version" value="fgpp" id="test1" checked />
+      <label for="test1">GNU C++</label>
+      <input name="group1" type="radio" name="version" value="fgpp11" id="test2" />
+      <label for="test2">GNU C++11</label>
+      <input name="group1" type="radio" name="version" value="fgpp14" id="test3" />
+      <label for="test3">GNU C++14</label>
+    </p>
+    <input type="submit" value="Get" class="cfgetanswer btn"></input>
+  </form>
+<a href = "#modal2"><p class="right flow-text" style="font-size: 14px;">help?</p></a>
+<div class="right">
+<a class="{{ A }} tooltipped" id="save-rating1" data-position="top" data-delay="50" data-tooltip="Easy"><i class="material-icons">code</i></a>
+<a class="{{ B }} tooltipped" id="save-rating2" data-position="top" data-delay="50" data-tooltip="Medium"><i class="material-icons">code</i></a>
+<a class="{{ C }} tooltipped" id="save-rating3" data-position="top" data-delay="50" data-tooltip="Hard"><i class="material-icons">code</i></a>
+<a class="{{ D }} tooltipped" id="save-rating4" data-position="top" data-delay="50" data-tooltip="Expert"><i class="material-icons">code</i></a>
+<br>
+<p style="font-size: 14px" class="flow-text">Select rating for your answer</p>
+  <div id="modal2" class="modal">
+    <div class="modal-content flow-text">
+    <h4>Language version</h4>
+      <p>
+      <input name="group1" type="radio" name="version" value="fgpp" id="test1" checked />
+      <label for="test1">GNU C++</label>
+      <input name="group1" type="radio" name="version" value="fgpp11" id="test2" />
+      <label for="test2">GNU C++11</label>
+      <input name="group1" type="radio" name="version" value="fgpp14" id="test3" />
+      <label for="test3">GNU C++14</label>
+      <br>
+      Description: It helps you to choose the version of C++ you are comfortable with and fetched those answers from database.
+    </p>
+    <hr>
+      <h4>Answer Ratings</h4>
+      <p>
+        <a class="blue btn btn-floating tooltipped pulse" data-position="top" data-delay="50" data-tooltip="Rating"><i class="material-icons">code</i></a>
+        This is rating button. Click each of them to change the quality of answer.
+      </p>
+      <p>Description: Here each answer have its own rating on the basis of user. If user is Legendary Master then his answer will be on Expert rating and you can view it by selecting it. Each button have 3 sub division of rating. For example Easy has Novice, Begineer ratings and such like that it increases</p>
+    </div>
+    <div class="modal-footer">
+      <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+<br>
+<center>
+<br>
+    <div class="preloader-wrapper large active" style="display: none;" id="preload">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  </center>
+<div id="problemanswer" style="padding:2%">
+	
+</div>
+
+</div>
+</div>
+{% endblock %}
